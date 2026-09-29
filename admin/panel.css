@@ -1,0 +1,335 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    min-height: 100%;
+}
+
+body {
+    font-family: 'Inter', Arial, sans-serif;
+    color: #e8edf7;
+    background:
+        radial-gradient(circle at 72% 25%, rgba(255, 0, 55, 0.26), transparent 27%),
+        radial-gradient(circle at 20% 80%, rgba(255, 0, 55, 0.20), transparent 32%),
+        linear-gradient(135deg, #030405 0%, #121317 42%, #050608 100%);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+body::before,
+body::after {
+    content: '';
+    position: fixed;
+    z-index: -1;
+    pointer-events: none;
+    transform: rotate(-24deg);
+}
+
+body::before {
+    width: 120vw;
+    height: 120px;
+    left: -20vw;
+    top: 20%;
+    background: linear-gradient(90deg, transparent, rgba(255, 0, 45, .75), transparent);
+    filter: blur(12px);
+}
+
+body::after {
+    width: 100vw;
+    height: 90px;
+    left: 5vw;
+    bottom: 12%;
+    background: linear-gradient(90deg, transparent, rgba(255, 0, 45, .48), transparent);
+    filter: blur(15px);
+}
+
+.admin-shell {
+    width: min(1180px, calc(100% - 32px));
+    margin: 0 auto;
+    padding: 11vh 0 40px;
+}
+
+.student-card {
+    background: rgba(13, 18, 30, .91);
+    border: 1px solid rgba(255, 255, 255, .10);
+    border-radius: 22px;
+    box-shadow: 0 25px 70px rgba(0, 0, 0, .55), inset 0 1px 0 rgba(255, 255, 255, .03);
+    padding: 30px;
+    backdrop-filter: blur(12px);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, .09);
+}
+
+.card-header h1 {
+    margin: 0;
+    font-size: clamp(25px, 3vw, 31px);
+    line-height: 1.2;
+    font-weight: 700;
+    letter-spacing: -.02em;
+}
+
+.card-header p {
+    margin: 7px 0 0;
+    color: #8e98aa;
+    font-size: 13px;
+}
+
+.add-button,
+.secondary-button {
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9px;
+    transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+}
+
+.add-button {
+    min-height: 41px;
+    padding: 0 20px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    background: linear-gradient(135deg, #6259ff, #4b3ef1);
+    box-shadow: 0 8px 22px rgba(82, 69, 255, .32);
+    white-space: nowrap;
+}
+
+.add-button:hover,
+.secondary-button:hover {
+    transform: translateY(-1px);
+}
+
+.alert {
+    margin-top: 16px;
+    padding: 11px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+}
+
+.alert.success {
+    color: #d8ffe8;
+    background: rgba(42, 180, 102, .12);
+    border: 1px solid rgba(42, 180, 102, .28);
+}
+
+.table-wrap {
+    margin-top: 25px;
+    overflow-x: auto;
+    border: 1px solid rgba(255, 255, 255, .08);
+    border-radius: 10px;
+}
+
+.student-table {
+    width: 100%;
+    min-width: 850px;
+    border-collapse: collapse;
+    table-layout: auto;
+}
+
+.student-table thead {
+    background: rgba(255, 255, 255, .08);
+}
+
+.student-table th,
+.student-table td {
+    padding: 15px 16px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, .08);
+    white-space: nowrap;
+}
+
+.student-table th {
+    color: #23bdf6;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: .02em;
+}
+
+.student-table td {
+    color: #dce1ea;
+    font-size: 14px;
+}
+
+.student-table tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+.student-table tbody tr {
+    transition: background .18s ease;
+}
+
+.student-table tbody tr:hover {
+    background: rgba(255, 255, 255, .035);
+}
+
+.student-table th:first-child,
+.student-table td:first-child {
+    width: 55px;
+}
+
+.student-table th:nth-child(5),
+.student-table td:nth-child(5) {
+    width: 120px;
+}
+
+.actions {
+    font-size: 13px !important;
+}
+
+.edit-link,
+.delete-link {
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.edit-link {
+    color: #16c9ff;
+}
+
+.delete-link {
+    color: #ff4d57;
+}
+
+.edit-link:hover,
+.delete-link:hover {
+    text-decoration: underline;
+}
+
+.divider {
+    color: #596172;
+    margin: 0 8px;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 45px 20px;
+    color: #8e98aa;
+}
+
+.empty-state h2 {
+    margin: 0 0 8px;
+    color: #e8edf7;
+    font-size: 18px;
+}
+
+.empty-state p {
+    margin: 0;
+    font-size: 13px;
+}
+
+.card-footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.secondary-button {
+    min-height: 36px;
+    padding: 0 14px;
+    color: #b9c3d3;
+    border: 1px solid rgba(255, 255, 255, .10);
+    background: rgba(255, 255, 255, .04);
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.secondary-button:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, .08);
+}
+
+@media (max-width: 720px) {
+    .admin-shell {
+        width: min(100% - 18px, 1180px);
+        padding-top: 25px;
+    }
+
+    .student-card {
+        padding: 18px;
+        border-radius: 16px;
+    }
+
+    .card-header {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .add-button {
+        width: 100%;
+    }
+
+    .table-wrap {
+        overflow-x: visible;
+        border: 0;
+    }
+
+    .student-table {
+        min-width: 0;
+    }
+
+    .student-table thead {
+        display: none;
+    }
+
+    .student-table,
+    .student-table tbody,
+    .student-table tr,
+    .student-table td {
+        display: block;
+        width: 100%;
+    }
+
+    .student-table tr {
+        margin-bottom: 14px;
+        border: 1px solid rgba(255, 255, 255, .08);
+        border-radius: 10px;
+        overflow: hidden;
+        background: rgba(255, 255, 255, .025);
+    }
+
+    .student-table td {
+        position: relative;
+        min-height: 46px;
+        padding: 12px 14px 12px 46%;
+        white-space: normal;
+        border-bottom: 1px solid rgba(255, 255, 255, .06);
+    }
+
+    .student-table td:last-child {
+        border-bottom: 0;
+    }
+
+    .student-table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 14px;
+        top: 12px;
+        color: #7e899b;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: .04em;
+    }
+
+    .card-footer {
+        justify-content: stretch;
+    }
+
+    .secondary-button {
+        flex: 1 1 140px;
+    }
+}
